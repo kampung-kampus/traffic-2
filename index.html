@@ -67,7 +67,7 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
   
- <script>
+<script>
   // Wait for the DOM to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
     // Global variables
@@ -315,7 +315,8 @@
     };
     timestampControl.addTo(map);
 
-    function toggleLegend() {
+    // Make toggleLegend function globally available
+    window.toggleLegend = function() {
       const legendDiv = document.getElementById('legend-box');
       if (legendDiv) {
         const container = legendDiv.parentElement;
@@ -327,7 +328,7 @@
           }
         }
       }
-    }
+    };
     
     function toggleViewMode() {
       currentViewMode = currentViewMode === 'polyline' ? 'heatmap' : 'polyline';
@@ -361,21 +362,6 @@
     // Initial load
     setTimeout(loadTrafficData, 100);
   });
-
-  // Make toggleLegend function globally available
-  window.toggleLegend = function() {
-    const legendDiv = document.getElementById('legend-box');
-    if (legendDiv) {
-      const container = legendDiv.parentElement;
-      if (container) {
-        if (container.style.display === 'none') {
-          container.style.display = '';
-        } else {
-          container.style.display = 'none';
-        }
-      }
-    }
-  };
 </script>
 </body>
 </html>
