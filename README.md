@@ -24,12 +24,7 @@ A real-time traffic visualization map for the Singapore-Johor Bahru causeway usi
    - Add: `LTA_ACCOUNT_KEY` = `325y4IwcQU+mqCX5P+D01g==`
 4. **Deploy** - Netlify will automatically deploy your site
 
-### Local Development
-
-1. Clone the repository
-2. Serve the files using a local server (e.g., `python -m http.server 8000`)
-3. Open `http://localhost:8000` in your browser
-
+ 
 ## API Usage
 
 This project uses the LTA DataMall API:
