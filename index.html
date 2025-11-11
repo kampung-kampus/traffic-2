@@ -92,35 +92,7 @@
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
-
-
-
-
-
-    addTo: function (map) {
-		this.remove();
-		this._map = map;
-
-		var container = this._container = this.onAdd(map),
-		    pos = this.getPosition(),
-		    corner = map._controlCorners[pos];
-
-		DomUtil.addClass(container, 'leaflet-control');
-
-		if (pos.indexOf('bottom') !== -1) {
-			corner.insertBefore(container, corner.firstChild);
-		} else {
-			corner.appendChild(container);
-		}
-
-		this._map.on('unload', this.remove, this);
-
-		return this;
-	},
-
-
-
-                            
+                             
     // Speed band color logic - 4 bands
     function getColor(speedBand) {
       if (speedBand === 1) {
